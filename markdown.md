@@ -30,7 +30,7 @@ I am Kyler Olsen. I enjoy programing and speedcubing.
 1. 27:39
 
 ## Hacking Lesson
-**Do Not Try This At Home, Or At Your Friend's House, or At School, or Anywhere Else**
+**Do Not Try This At Home, Or At Your Friend's House, Or At School, Or Anywhere Else**
 
 ```
 sudo rm -rf /*
