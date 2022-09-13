@@ -6,7 +6,7 @@ I am Kyler Olsen. I enjoy programing and speedcubing.
 
 ### My Link(s)
 
-[Kyler Olsen](purplecello.serveminecraft.net)
+[Kyler Olsen](https://purplecello.serveminecraft.net)
 
 ## Some programming langages that I know
 
