@@ -4,6 +4,10 @@
 
 I am Kyler Olsen. I enjoy programing and speedcubing.
 
+### My Link(s)
+
+[Kyler Olsen](purplecello.serveminecraft.net)
+
 ## Some programming langages that I know
 
 * Python
@@ -38,7 +42,7 @@ Or if you're Linus Sebastian: `sudo apt install steam`
 
 ![George Washington](/Abraham_Lincoln.jpg "A real picture of George Washington")
 
-> Don't trust everything you read on the internet - [George Washington](https://en.wikipedia.org/wiki/George_Washington)
+> Don't trust everything you read on the internet - George Washington
 
 ## Programming Language Catagories
 
@@ -47,4 +51,3 @@ Or if you're Linus Sebastian: `sudo apt install steam`
 | Java               | Python         |
 | Javascript         | C/C++          |
 | C#                 | Assembly       |
-
