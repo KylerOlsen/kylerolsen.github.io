@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Olsen Christmas Tree Lights</title>
+    <style>
+        body {
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 24px;
+            background-color: #121212;
+            color: #dedede;
+        }
+        main {
+            padding-left: 20vw;
+            padding-right: 20vw;
+            padding-top: 5vh;
+            padding-bottom: 5vh;
+        }
+        code {
+            background-color: #202030;
+            padding-left: 2px;
+            padding-right: 2px;
+        }
+        pre > code {
+            display: block;
+            padding: 5px;
+            overflow-x: auto;
+        }
+        .keyword1 {
+            color: #4269de;
+        }
+        .keyword2 {
+            color: #6942de;
+        }
+        .module {
+            color: #9042de;
+        }
+        .class {
+            color: #42de42;
+        }
+        .function {
+            color: #deb742;
+        }
+        .variable {
+            color: #42b7de;
+        }
+        .constant {
+            color: #4290de;
+        }
+        .literal {
+            color: #42de90;
+        }
+        .string-literal {
+            color: #de9042;
+        }
+        .comment {
+            color: #de4242;
+        }
+        @media screen and (max-width: 768px) {
+            main {
+                padding-left: 5vw;
+                padding-right: 5vw;
+            }
+        }
+        @media print {
+            body {
+                font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                font-size: 12px;
+                background-color: #ffffff;
+                color: #000000;
+            }
+            main {
+                padding-left: .5in;
+                padding-right: .5in;
+                padding-top: .1in;
+                padding-bottom: 0;
+            }
+            code {
+                background-color: #c0c0d0;
+            }
+            pre > code {
+                /* font-size: 10px; */
+                overflow-x: hidden;
+            }
+            .keyword1 {
+                color: #2a3690;
+            }
+            .keyword2 {
+                color: #422a90;
+            }
+            .module {
+                color: #902a90;
+            }
+            .class {
+                color: #2a902a;
+            }
+            .function {
+                color: #90692a;
+            }
+            .variable {
+                color: #2a6990;
+            }
+            .constant {
+                color: #2a4290;
+            }
+            .literal {
+                color: #2a9042;
+            }
+            .string-literal {
+                color: #90422a;
+            }
+            .comment {
+                color: #902a36;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1 id="olsen-christmas-tree-lights">Olsen Christmas Tree Lights</h1>
+        <p><em>November 2023</em></p>
+        <p>Olsen Christmas Tree Lights Controller Documentation.</p>
+        <h2 id="basic-controls">Basic Controls</h2>
+        <p>Connecting to the Pi Pico W using a desktop or mobile web browser allows a
+            user to control the tree.</p>
+        <h3 id="reset">Reset</h3>
+        <p>When a program is running, the tree must be reset to stop the currently running
+            lights program before a new program can be started. Clicking <code>Reset Tree</code> will
+            command the Pico to stop the current program and turn off all lights.</p>
+        <h3 id="running-a-program">Running a program</h3>
+        <p>Under the <code>Reset Tree</code> button is a list of programs currently available on the
+            Pico. Clicking on one will command the Pico to start the selected program.</p>
+        <h2 id="adding-programs">Adding Programs</h2>
+        <p>Below the program selection interface is the program uploading interface.</p>
+        <h3 id="interface">Interface</h3>
+        <p>First is the program name entry box. Here the name of the new or existing
+            program can be entered. By default this field is empty.</p>
+        <p>Second is the program file extension box. This allows for other file types to be
+            edited, for example <code>.txt</code>, <code>.html</code> and others. By default this field is set to
+            <code>.py</code>.
+        </p>
+        <p>Third is the program code view. Programs can be typed or pasted in to upload
+            them to the Pico. Programs from the Pico can also be loaded into this field. By
+            default this field has a basic sample program.</p>
+<pre><code><span class="comment"># Starter Program</span>
+
+<span class="keyword1">def</span> <span class="function">setup</span>(<span class="variable">np1</span>, <span class="variable">np2</span>):
+    <span class="keyword2">pass</span>
+
+<span class="keyword1">def</span> <span class="function">loop</span>(<span class="variable">td</span>, <span class="variable">np1</span>, <span class="variable">np2</span>):
+    <span class="keyword2">pass</span>
+
+<span class="keyword1">def</span> <span class="function">cleanup</span>(<span class="variable">td</span>, <span class="variable">np1</span>, <span class="variable">np2</span>):
+    <span class="keyword2">pass</span>
+</code></pre>
+        <p>Fourth is the program upload button. This uploads the contents of the program
+            code view to the Pico, creating or overriding the file specified by the first
+            two fields.</p>
+        <p>Fifth is the program download button. This loads the file specified by the first
+            two fields into the program code view, clearing anything currently in it.</p>
+        <h3 id="program-start">Program Start</h3>
+        <p><code>def setup(np1, np2)</code></p>
+        <p>When a program is started, the <code>setup</code> function is first called.</p>
+        <p>The function has two requirements.</p>
+        <ul>
+            <li>The function must be named <code>setup</code>.</li>
+            <li>The function must accept two parameters.</li>
+        </ul>
+        <p>The parameters are the objects created using the neopixel library to control the
+            first and second light strips respectively.</p>
+        <p>This function is optional.</p>
+        <h3 id="program-loop">Program Loop</h3>
+        <p><code>def loop(td, np1, np2)</code></p>
+        <p>As the program is running, the <code>loop</code> function is repeated called.</p>
+        <p>The function has two requirements.</p>
+        <ul>
+            <li>The function must be named <code>loop</code>.</li>
+            <li>The function must accept three parameters.</li>
+        </ul>
+        <p>The first parameter is the time since the last time the function was called,
+            with the exception of the first time the <code>loop</code> function is called where it is
+            the time since the <code>setup</code> function was called.</p>
+        <p>The second and third parameters are the objects created using the neopixel
+            library to control the first and second light strips respectively, the same as
+            in the <code>setup</code> function.</p>
+        <p>This function is optional.</p>
+        <h3 id="program-exit">Program Exit</h3>
+        <p><code>def cleanup(td, np1, np2)</code></p>
+        <p>When a program is stopped, the <code>cleanup</code> function is called.</p>
+        <p>The function has two requirements.</p>
+        <ul>
+            <li>The function must be named <code>cleanup</code>.</li>
+            <li>The function must accept three parameters.</li>
+        </ul>
+        <p>The first parameter is the time since the last time the <code>loop</code> function was
+            called.</p>
+        <p>The second and third parameters are the objects created using the neopixel
+            library to control the first and second light strips respectively, the same as
+            in the <code>setup</code> and <code>loop</code> function.</p>
+        <p>This function is optional.</p>
+        <h3 id="rainbow-program-example">Rainbow Program Example</h3>
+        <p><em>WIP</em></p>
+<pre><code><span class="comment"># Kyler Olsen</span>
+<span class="comment"># Nov 2023</span>
+
+<span class="keyword1">def</span> <span class="function">hsv_to_rgb</span>(<span class="variable">h</span>, <span class="variable">s</span>, <span class="variable">v</span>, <span class="variable">scale</span>=<span class="literal">255</span>):
+    <span class="keyword2">if</span> <span class="variable">s</span> == <span class="literal">0.0</span>:
+        <span class="keyword2">return</span> <span class="class">int</span>(<span class="variable">v</span> * <span class="variable">scale</span>), <span class="class">int</span>(<span class="variable">v</span> * <span class="variable">scale</span>), <span class="class">int</span>(<span class="variable">v</span> * <span class="variable">scale</span>)
+    <span class="variable">i</span> = <span class="class">int</span>(<span class="variable">h</span> * <span class="literal">6.</span>)
+    <span class="variable">f</span> = (<span class="variable">h</span> * <span class="literal">6.</span>) - <span class="variable">i</span>
+    <span class="variable">p</span> = <span class="variable">v</span> * (<span class="literal">1.</span> - <span class="variable">s</span>)
+    <span class="variable">q</span> = <span class="variable">v</span> * (<span class="literal">1.</span> - <span class="variable">s</span> * <span class="variable">f</span>)
+    <span class="variable">t</span> = <span class="variable">v</span> * (<span class="literal">1.</span> - <span class="variable">s</span> * (<span class="literal">1.</span> - <span class="variable">f</span>))
+    <span class="variable">i</span> = <span class="variable">i</span> % <span class="literal">6</span>
+    <span class="keyword2">if</span> <span class="variable">i</span> == <span class="literal">0</span>: <span class="keyword2">return</span> <span class="class">int</span>(<span class="variable">v</span> * <span class="variable">scale</span>), <span class="class">int</span>(<span class="variable">t</span> * <span class="variable">scale</span>), <span class="class">int</span>(<span class="variable">p</span> * <span class="variable">scale</span>)
+    <span class="keyword2">elif</span> <span class="variable">i</span> == <span class="literal">1</span>: <span class="keyword2">return</span> <span class="class">int</span>(<span class="variable">q</span> * <span class="variable">scale</span>), <span class="class">int</span>(<span class="variable">v</span> * <span class="variable">scale</span>), <span class="class">int</span>(<span class="variable">p</span> * <span class="variable">scale</span>)
+    <span class="keyword2">elif</span> <span class="variable">i</span> == <span class="literal">2</span>: <span class="keyword2">return</span> <span class="class">int</span>(<span class="variable">p</span> * <span class="variable">scale</span>), <span class="class">int</span>(<span class="variable">v</span> * <span class="variable">scale</span>), <span class="class">int</span>(<span class="variable">t</span> * <span class="variable">scale</span>)
+    <span class="keyword2">elif</span> <span class="variable">i</span> == <span class="literal">3</span>: <span class="keyword2">return</span> <span class="class">int</span>(<span class="variable">p</span> * <span class="variable">scale</span>), <span class="class">int</span>(<span class="variable">q</span> * <span class="variable">scale</span>), <span class="class">int</span>(<span class="variable">v</span> * <span class="variable">scale</span>)
+    <span class="keyword2">elif</span> <span class="variable">i</span> == <span class="literal">4</span>: <span class="keyword2">return</span> <span class="class">int</span>(<span class="variable">t</span> * <span class="variable">scale</span>), <span class="class">int</span>(<span class="variable">p</span> * <span class="variable">scale</span>), <span class="class">int</span>(<span class="variable">v</span> * <span class="variable">scale</span>)
+    <span class="keyword2">else</span>: <span class="keyword2">return</span> <span class="class">int</span>(<span class="variable">v</span> * <span class="variable">scale</span>), <span class="class">int</span>(<span class="variable">p</span> * <span class="variable">scale</span>), <span class="class">int</span>(<span class="variable">q</span> * <span class="variable">scale</span>)
+
+<span class="keyword1">def</span> <span class="function">get_rainbow</span>(<span class="variable">i</span>, <span class="variable">n</span>, <span class="variable">reverse</span>=<span class="constant">False</span>, <span class="variable">scale</span>=<span class="literal">255</span>):
+    <span class="variable">h</span> = <span class="variable">i</span>/<span class="variable">n</span>
+    <span class="keyword2">if</span> <span class="variable">reverse</span>: <span class="variable">h</span> = <span class="literal">1</span> - <span class="variable">h</span>
+        <span class="variable">c</span> = <span class="function">hsv_to_rgb</span>(<span class="variable">h</span>, <span class="literal">1</span>, <span class="literal">1</span>, <span class="variable">scale</span>)
+        <span class="keyword2">return</span> <span class="variable">c</span>[<span class="literal">1</span>], <span class="variable">c</span>[<span class="literal">2</span>], <span class="variable">c</span>[<span class="literal">0</span>]
+
+<span class="keyword1">def</span> <span class="function">set_color</span>(<span class="variable">n</span>, <span class="variable">color</span>=(<span class="literal">0</span>,<span class="literal">0</span>,<span class="literal">0</span>)):
+    <span class="keyword2">for</span> <span class="variable">i</span> <span class="keyword1">in</span> <span class="class">range</span>(<span class="function">len</span>(<span class="variable">n</span>)):
+        <span class="variable">n</span>[<span class="variable">i</span>] = <span class="variable">color</span>
+
+<span class="variable">index</span> = <span class="literal">0</span>
+<span class="variable">t</span> = <span class="literal">0</span>
+
+<span class="keyword1">def</span> <span class="function">loop</span>(<span class="variable">td</span>, <span class="variable">np1</span>, <span class="variable">np2</span>):
+    <span class="keyword2">global</span> <span class="variable">index</span>, <span class="variable">t</span>
+    <span class="variable">t</span> += <span class="variable">td</span>
+    <span class="keyword2">if</span> <span class="variable">t</span> >= <span class="literal">1</span>:
+        <span class="variable">t</span> -= <span class="literal">1</span>
+        <span class="variable">c</span> = <span class="function">get_rainbow</span>(<span class="variable">index</span>, <span class="literal">256</span>, <span class="constant">False</span>, <span class="literal">128</span>)
+        <span class="function">set_color</span>(<span class="variable">np1</span>, <span class="variable">c</span>)
+        <span class="function">set_color</span>(<span class="variable">np2</span>, <span class="variable">c</span>)
+        <span class="variable">np1</span>.<span class="function">write</span>()
+        <span class="variable">np2</span>.<span class="function">write</span>()
+        <span class="variable">index</span> += <span class="literal">1</span>
+        <span class="variable">index</span> %= <span class="literal">256</span>
+
+<span class="keyword1">def</span> <span class="function">setup</span>(<span class="variable">np1</span>, <span class="variable">np2</span>):
+    <span class="function">print</span>(<span class="string-literal">"Rainbow Loaded!"</span>)
+</code></pre>
+        <h3 id="default-program">Default Program</h3>
+        <p>The file <code>default.txt</code> contains the name of the program to run when the Pico
+            first starts after it is plugged in or after a hardware reset.</p>
+        <p>The program does not start until the Pico connects to WIFI.</p>
+        <p>The <code>default.txt</code> must contain only the name of the program, without the file
+            extension.</p>
+        <h2 id="advance-controls">Advance Controls</h2>
+        <p><em>WIP</em></p>
+    </main>
+</body>
+</html>
