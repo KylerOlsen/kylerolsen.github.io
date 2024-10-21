@@ -1,0 +1,109 @@
+body {
+    background-color: black;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    margin: 0;
+    overflow: hidden;
+}
+
+canvas {
+    background-color: black;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    margin: 0;
+    border: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+#year {
+    background-color: black;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: right;
+    margin: 5px;
+    border: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.info {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 18px;
+    text-align: center;
+    margin: 0;
+
+    display: flex;
+    width: fit-content;
+    max-width: 450px;
+    opacity: 100;
+    flex-direction: column;
+    align-items: center;
+    transition: all .75s ease;
+    z-index: 1;
+
+    position: absolute;
+    top: 50vh;
+    left: 72vw;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.info.before, .info.after {
+    opacity: 0;
+    z-index: 0;
+}
+
+.info.before {
+    top: calc(50vh + 40px);
+}
+
+.info.after {
+    top: calc(50vh - 40px);
+}
+
+.info img {
+    display: block;
+    margin: auto;
+    object-fit: contain;
+    max-width: 450px;
+    max-height: 40vh;
+}
+
+.img {
+    font-size: 14px;
+}
+
+@media screen and (max-width: 768px) {
+    .info {
+        font-size: 13px;
+        top: 75vh;
+        left: 50vw;
+        transform: translateX(-50%) translateY(-50%);
+    }
+
+    .info.before, .info.after {
+        opacity: 0;
+    }
+
+    .info.before {
+        top: calc(75vh + 40px);
+    }
+
+    .info.after {
+        top: calc(75vh - 40px);
+    }
+
+    .info img {
+        max-height: 12vh;
+    }
+
+    .img {
+        font-size: 10px;
+    }
+}

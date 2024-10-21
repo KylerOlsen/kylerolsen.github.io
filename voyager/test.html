@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Three.js Wireframe Icosphere</title>
+    <style>
+        body { margin: 0; }
+        canvas { display: block; }
+    </style>
+</head>
+<body>
+    <script src="https://local.purplecello.org/js/three.js"></script>
+    <script>
+        // Create the scene
+        const scene = new THREE.Scene();
+
+        // Create a camera
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 2000);
+        camera.position.z = 50;
+
+        // Create the renderer
+        const renderer = new THREE.WebGLRenderer();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        document.body.appendChild(renderer.domElement);
+        renderer.localClippingEnabled = true;
+
+        class Sun {
+
+            constructor(radius, x, y, z, color_a, axis, detail) {
+                this.geometry_a = new THREE.IcosahedronGeometry(radius, detail);
+                // this.geometry_a = new THREE.SphereGeometry(radius, 12, 12);
+                this.wireframe_a = new THREE.WireframeGeometry(this.geometry_a);
+                this.material_a = new THREE.LineBasicMaterial({ color: color_a });
+                this.sphere_a = new THREE.LineSegments(this.wireframe_a, this.material_a);
+                scene.add(this.sphere_a);
+                this.clippingPlane_a = new THREE.Plane(new THREE.Vector3(0, 1, 0), 0);
+                this.material_a.clippingPlanes = [this.clippingPlane_a];
+
+                this.camera_clippingPlane = new THREE.Plane(new THREE.Vector3(0, 0, 1), 0);
+                this.material_a.clippingPlanes.push(this.camera_clippingPlane);
+
+                this.sphere_a.rotation.x = axis;
+
+                this.sphere_a.position.x = x;
+                this.sphere_a.position.y = y;
+                this.sphere_a.position.z = z;
+            }
+
+            animate() {
+                // this.sphere_a.rotation.x += 0.01;
+                this.sphere_a.rotation.y += 0.01;
+                // this.sphere_a.rotation.z += 0.01;
+
+                const directionToOrigin_a = new THREE.Vector3().copy(this.sphere_a.position).normalize().negate();
+                const planeNormal_a = directionToOrigin_a;
+                this.clippingPlane_a.normal.copy(planeNormal_a);
+                this.clippingPlane_a.constant = -this.clippingPlane_a.normal.dot(this.sphere_a.position);
+
+                const spherePosition = this.sphere_a.position.clone();
+                const cameraToSphereDirection = new THREE.Vector3().subVectors(camera.position, spherePosition).normalize();
+
+                if (this.camera_clippingPlane != null) {
+                    this.camera_clippingPlane.normal.copy(cameraToSphereDirection);
+                    this.camera_clippingPlane.constant = -this.camera_clippingPlane.normal.dot(this.sphere_a.position);
+                }
+            }
+        }
+
+        class Body {
+
+            constructor(radius, x, y, z, color_a, color_b, axis, detail) {
+                this.geometry_a = new THREE.IcosahedronGeometry(radius, detail);
+                // this.geometry_a = new THREE.SphereGeometry(radius, 12, 12);
+                this.wireframe_a = new THREE.WireframeGeometry(this.geometry_a);
+                this.material_a = new THREE.LineBasicMaterial({ color: color_a });
+                this.sphere_a = new THREE.LineSegments(this.wireframe_a, this.material_a);
+                scene.add(this.sphere_a);
+                this.clippingPlane_a = new THREE.Plane(new THREE.Vector3(0, 1, 0), 0);
+                this.material_a.clippingPlanes = [this.clippingPlane_a];
+
+                this.geometry_b = new THREE.IcosahedronGeometry(radius, detail);
+                // this.geometry_b = new THREE.SphereGeometry(radius, 12, 12);
+                this.wireframe_b = new THREE.WireframeGeometry(this.geometry_b);
+                this.material_b = new THREE.LineBasicMaterial({ color: color_b });
+                this.sphere_b = new THREE.LineSegments(this.wireframe_b, this.material_b);
+                scene.add(this.sphere_b);
+                this.clippingPlane_b = new THREE.Plane(new THREE.Vector3(0, 1, 0), x);
+                this.material_b.clippingPlanes = [this.clippingPlane_b];
+
+                this.camera_clippingPlane = new THREE.Plane(new THREE.Vector3(0, 0, 1), 0);
+                this.material_a.clippingPlanes.push(this.camera_clippingPlane);
+                this.material_b.clippingPlanes.push(this.camera_clippingPlane);
+
+                this.sphere_a.rotation.x = axis;
+                this.sphere_b.rotation.x = axis;
+
+                // this.clippingPlane_a.position.x = x;
+                // this.clippingPlane_a.position.y = y;
+                // this.clippingPlane_a.position.z = z;
+                // this.clippingPlane_b.position.x = x;
+                // this.clippingPlane_b.position.y = y;
+                // this.clippingPlane_b.position.z = z;
+
+                this.sphere_a.position.x = x;
+                this.sphere_a.position.y = y;
+                this.sphere_a.position.z = z;
+                this.sphere_b.position.x = x;
+                this.sphere_b.position.y = y;
+                this.sphere_b.position.z = z;
+            }
+
+            animate() {
+                // this.sphere_a.rotation.x += 0.01;
+                this.sphere_a.rotation.y += 0.01;
+                // this.sphere_a.rotation.z += 0.01;
+
+                this.sphere_b.rotation.x = this.sphere_a.rotation.x;
+                this.sphere_b.rotation.y = this.sphere_a.rotation.y;// + 3.14159265359;
+                this.sphere_b.rotation.z = this.sphere_a.rotation.z;
+
+                const directionToOrigin_a = new THREE.Vector3().copy(this.sphere_a.position).normalize().negate();
+                const planeNormal_a = directionToOrigin_a;
+                this.clippingPlane_a.normal.copy(planeNormal_a);
+                this.clippingPlane_a.constant = -this.clippingPlane_a.normal.dot(this.sphere_a.position);
+
+                const directionToOrigin_b = new THREE.Vector3().copy(this.sphere_b.position).normalize();
+                const planeNormal_b = directionToOrigin_b;
+                this.clippingPlane_b.normal.copy(planeNormal_b);
+                this.clippingPlane_b.constant = -this.clippingPlane_b.normal.dot(this.sphere_b.position);
+
+                const spherePosition = this.sphere_a.position.clone();
+                const cameraToSphereDirection = new THREE.Vector3().subVectors(camera.position, spherePosition).normalize();
+
+                if (this.camera_clippingPlane != null) {
+                    this.camera_clippingPlane.normal.copy(cameraToSphereDirection);
+                    this.camera_clippingPlane.constant = -this.camera_clippingPlane.normal.dot(this.sphere_a.position);
+                }
+            }
+        }
+
+        const bodies = [];
+        bodies.push(new Sun(10, 0, 0, 0, 0xffff00, 0, 8));
+        bodies.push(new Body(1, -50, 0, 0, 0xffffff, 0x888888, 1, 1));
+        bodies.push(new Body(1, 50, 0, 0, 0xffffff, 0x888888, 3.14, 1));
+
+        let angle = 0;
+
+        // Animation loop
+        function animate() {
+            requestAnimationFrame(animate);
+
+            bodies.forEach(element => {
+                element.animate();
+            });
+
+            // const radius = 100;
+            // angle = 0.01;
+            // camera.position.x = radius * Math.sin(angle);
+            // camera.position.z = radius * Math.cos(angle);
+            // camera.lookAt(new THREE.Vector3());
+
+            renderer.render(scene, camera);
+        }
+
+        animate();
+    </script>
+</body>
+</html>

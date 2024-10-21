@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Voyager Missions</title>
+    <script src="index.js"></script>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <canvas></canvas>
+    <span id="year"></span>
+    <div id="intro" class="info before">
+        <p>
+            In the 1960s, NASA scientist and engineers began sending robotic
+            probes to explore our planetary neighbors. This greatly expanded
+            our knowledge of theses worlds and gave us entirely new, close-up
+            views of the inner planets that we could only before dream of.
+            This began a new age of exploration, bringing into our reach those
+            distant mysterious discs.
+            <br/>↓ ↓ Scroll ↓ ↓
+        </p>
+    </div>
+    <div id="grand_tour" class="info before">
+        <p>
+            By the 1970s our sights were set on the outer planets, just as a
+            special opportunity presented itself; the outer planets were soon
+            to be positioned in a way that allowed two spacecraft to efficiently
+            visit the four outer planets, a Grand Tour of the outer solar
+            system. One probe would be sent to Jupiter, and Saturn, with another
+            to all four. Both would utilize the gravity assist maneuver to
+            propel them to their next target.
+        </p>
+    </div>
+    <div id="launch" class="info before">
+        <p>
+            On August 20, 1977, Voyager 2 was launched on a Titan-Centaur
+            rocket. If the launch had been unsuccessful, the Voyager 1
+            launch could have been adjusted to have it visit all four outer
+            planets. Thankfully it was successful and on September 5,
+            1977 Voyager 1 was launched on its accelerated course to Jupiter.
+        </p>
+        <div class="img">
+            <a href="imgs/voyager1and2-launch.jpg"><img alt="Launch of Voyager 1 and 2" src="imgs/voyager1and2-launch.jpg"/></a>
+            Launch of Voyager 1 and Voyage 2 on their Titan-Centaur vehicles.
+            Credits: <a href="https://photojournal.jpl.nasa.gov/catalog/PIA21747">NASA/JPL-Caltech/KSC</a>
+        </div>
+    </div>
+    <div id="earth_and_moon" class="info before">
+        <p>
+            Thirteen days later after launch, Voyager 1 pointed its camera back
+            home, capturing both Earth and the Moon in a single frame.
+        </p>
+        <div class="img">
+            <a href="imgs/earth-and-moon.jpg"><img alt="The Earth and Moon" src="imgs/earth-and-moon.jpg"/></a>
+            The Earth and Moon, captured in a single frame by Voyager 1.
+            Credits: <a href="https://photojournal.jpl.nasa.gov/catalog/PIA01967">NASA/JPL-Caltech</a>
+        </div>
+    </div>
+    <div id="spacecraft" class="info before">
+        <p>
+            The engineers at NASA's Jet Propulsion Laboratory designed and built
+            both spacecraft. Let's take a closer look at them.
+        </p>
+        <div class="img">
+            <a href="imgs/voyager-labeled.jpg"><img alt="Voyager Spacecraft - Labeled" src="imgs/voyager-labeled.jpg" /></a>
+            Artist's concept of a Voyager spacecraft in deep space. Labels added.
+            Credits: <a href="https://science.nasa.gov/image-detail/pia17049-hires/">NASA/JPL-Caltech</a>
+        </div>
+    </div>
+    <div id="coms_and_control" class="info before">
+        <p>
+            Each spacecraft had a main, central body, that housed communication
+            and control systems, including a digital tap recorder for data
+            storage. Attached to the top is a 3.66 meter diameter parabolic
+            antenna for communications with Earth.
+        </p>
+        <div class="img">
+            <a href="imgs/antenna-dish.jpg"><img alt="Voyager Antenna Dish" src="imgs/antenna-dish.jpg" /></a>
+            Engineer working on a parabolic Voyager high-gain antenna.
+            Credits: <a href="https://photojournal.jpl.nasa.gov/catalog/PIA21480">NASA/JPL-Caltech</a>
+        </div>
+    </div>
+    <div id="instruments" class="info before">
+        <p>
+            On one side is the instrument boom, which holds the majority of the
+            probe's scientific instruments and cameras. Opposite the instrument
+            boom are two antennas that make up the radio astronomy sensors. On
+            the same side, extending up is the magnetometer boom, with the
+            sensitive magnetometer at the end, far away from any magnetic
+            interference from the probe's electronic systems.
+        </p>
+        <div class="img">
+            <a href="imgs/le-charged-particle.jpg"><img alt="Low-Energy Charged Particle Instrument" src="imgs/le-charged-particle.jpg"/></a>
+            Low-Energy Charged Particle Instrument Assembly.
+            Credits: <a href="https://photojournal.jpl.nasa.gov/catalog/PIA16487">NASA/JPL-Caltech/JHU-APL</a>
+        </div>
+    </div>
+    <div id="power" class="info before">
+        <p>
+            The spacecraft's power source is an array of three radioisotope
+            thermoelectric generators (RTGs). Each RTG contains samples of
+            Plutonium-238 (PuO<sub>2</sub>). As the plutonium decays, it creates
+            heat that is then converted into electricity.
+        </p>
+        <div class="img">
+            <a href="imgs/rtg.jpg"><img alt="A Voyager RTG" src="imgs/rtg.jpg"/></a>
+            One of the RTGs used by the Voyager probes.
+            Credits: <a href="https://photojournal.jpl.nasa.gov/catalog/PIA25782">NASA/JPL-Caltech</a>
+        </div>
+    </div>
+    <div id="jupiter" class="info before">
+        <p>
+            Voyager 1 was the first to arrive at Jupiter, arriving on March 5,
+            1979. Voyager 2 arrived on July 9, 1979. During their flybys, three
+            moons were discovered and several other observations lead to
+            surprising discoveries about Jupiter and its moons.
+        </p>
+        <div class="img">
+            <a href="imgs/jupiter-approach.gif"><img alt="Approach of Voyager 1 to Jupiter" src="imgs/jupiter-approach.gif"/></a>
+            Animation of Voyager 1's approach to Jupiter.
+            Credits: <a href="https://science.nasa.gov/image-detail/pia02855-4/">NASA/JPL-Caltech</a>
+        </div>
+    </div>
+    <div id="io" class="info before">
+        <p>
+            Flying by the moon Jupiter, Voyager 1 made the first observation of
+            active volcanic activity other than on Earth. Together Voyager 1 and
+            2 observed nine separate eruptions with evidence of several others
+            in the four months between.
+        </p>
+        <div class="img">
+            <a href="imgs/io-volcano.jpg"><img alt="Io with Volcanic Plume" src="imgs/io-volcano.jpg"/></a>
+            Io with Volcanic Plume by Voyager 1; brightened plume.
+            Credits: <a href="https://science.nasa.gov/image-detail/pia00010/">NASA/JPL-Caltech</a>
+        </div>
+    </div>
+    <div id="europa" class="info before">
+        <p>
+            Europa was found to have many long rifts, evidence of tectonic
+            activity, but with Voyager 2's flyby, its surface features were
+            found to be very flat. It is believed that Europa has a thin icy
+            crust on top of an ocean of liquid water.
+        </p>
+        <div class="img">
+            <a href="imgs/europa.jpg"><img alt="Europa" src="imgs/europa.jpg"/></a>
+            Europa During Voyager 2 Closest Approach.
+            Credits: <a href="https://science.nasa.gov/image-detail/pia00459/">NASA/JPL-Caltech</a>
+        </div>
+    </div>
+    <div id="rings" class="info before">
+        <p>
+            With their close up views, the Voyager probes also discovered
+            a faint ring system around Jupiter that had never been
+            observed before.
+        </p>
+        <div class="img">
+            <a href="imgs/jupiter-rings.jpg"><img alt="Jupiter's Faint Ring System" src="imgs/jupiter-rings.jpg"/></a>
+            False Color of Jupiter's Faint Ring System by Voyager 2.
+            Credits: <a href="https://science.nasa.gov/image-detail/pia01529/">NASA/JPL-Caltech</a>
+        </div>
+    </div>
+    <div id="saturn" class="info before">
+        <p>
+            Voyager 1 arrived at Saturn on November 12, 1980, with Voyager 2
+            arriving on August 25, 1981. One fascinating discovery was of
+            Saturn's active atmosphere. When in visible color and observed from
+            Earth, Saturn's atmosphere appears very plain, but with a closer
+            look in ultraviolet, bands of clouds with storms were found.
+        </p>
+        <div class="img">
+            <a href="imgs/saturns-atmosphere.jpg"><img alt="Approach of Voyager 2 to Saturn" src="imgs/saturns-atmosphere.jpg"/></a>
+            Approach of Voyager 2 to Saturn in false color.
+            Credits: <a href="https://science.nasa.gov/image-detail/pia03152/">NASA/JPL-Caltech</a>
+        </div>
+    </div>
+    <div id="titan" class="info before">
+        <p>
+            With scientist's interest in Titan and its atmosphere, Voyager 1's
+            trajectory was optimized for a flyby, the closest flyby of any
+            body during the Voyager Missions. Information about the atmosphere's
+            density and composition were made, but no observations of the
+            surface could be done because of the thick clouds.
+        </p>
+        <div class="img">
+            <a href="imgs/titan.jpg"><img alt="Titan's Atmosphere" src="imgs/titan.jpg"/></a>
+            False color of Titan's atmospheric haze by Voyager 1.
+            Credits: <a href="https://photojournal.jpl.nasa.gov/catalog/PIA01533">NASA/JPL-Caltech</a>
+        </div>
+    </div>
+    <div id="missing_pluto" class="info before">
+        <p>
+            This flyby of Titan put Voyager 1 on a course above the ecliptic of
+            the Solar System, flying out of the Solar System.
+        </p>
+        <div class="img">
+            <a href="imgs/saturn-rings.jpg"><img alt="Saturn and its rings" src="imgs/saturn-rings.jpg"/></a>
+            Saturn and its rings as Voyager 1 leaves.
+            Credits: <a href="https://science.nasa.gov/image-detail/pia00335-3/">NASA/JPL-Caltech</a>
+        </div>
+    </div>
+    <div id="huygens" class="info before">
+        <p>
+            Still fascinated by Jupiter and Saturn more missions were sent by
+            NASA to study the outer Solar System. The Galileo and Juno orbiters
+            were sent to Jupiter, Cassini with its Huygens lander probe visited
+            Saturn and Titan.
+        </p>
+        <div class="img">
+            <a href="imgs/titan-surface.jpg"><img alt="Titan's Surface" src="imgs/titan-surface.jpg"/></a>
+            Titan's Surface after the landing of the Huygens probe.
+            Credits: <a href="https://photojournal.jpl.nasa.gov/catalog/PIA07232">NASA/JPL/ESA/University of Arizona</a>
+        </div>
+    </div>
+    <div id="uranus" class="info before">
+        <p>
+            As its hyperbolic trajectory brought Voyager 2 further from the Sun,
+            its speed decreased, and the distance between planets increased,
+            so Voyager 2's journey between the planets grew longer. With it
+            being four year after Saturn, it finally arrived, this time alone,
+            at Uranus on January 24, 1986.
+        </p>
+        <div class="img">
+            <a href="imgs/uranus.jpg"><img alt="Uranus" src="imgs/uranus.jpg"/></a>
+            Voyager 2 approaches Uranus.
+            Credits: <a href="https://science.nasa.gov/image-detail/amf-pia18182/">NASA/JPL-Caltech</a>
+        </div>
+    </div>
+    <div id="icy_moons" class="info before">
+        <p>
+            During its flyby, Voyager 2 visited several known moons and
+            discovered 10 previously unknown moons. It also took the first
+            quality pictures of Uranus as previously ground based telescopes
+            could only get a small, mostly uniformly colored circle.
+        </p>
+    </div>
+    <div id="miranda" class="info before">
+        <p>
+            The ice-rock conglomerate moon, Miranda was found to be particularly
+            interesting as its surface was a mix of old and new, with large
+            features and canyons ten times deeper than the Grand Canyon on
+            Earth.
+        </p>
+        <div class="img">
+            <a href="imgs/miranda.jpg"><img alt="Miranda" src="imgs/miranda.jpg"/></a>
+            The icy moon Miranda by Voyager 2.
+            Credits: <a href="https://photojournal.jpl.nasa.gov/catalog/PIA02213">NASA/JPL-Caltech</a>
+        </div>
+    </div>
+    <div id="young_rings" class="info before">
+        <p>
+            Also interesting was that the previously known ring system was
+            found to be very different from Jupiter and Saturns' rings and are
+            relatively young.
+        </p>
+    </div>
+    <div id="ariel" class="info before">
+        <p>
+            The moon Ariel was found to have a young surface showing evidence
+            of recent geological activity. With the distance from the Sun and
+            cold temperatures, flows of not volcanic rock, but rather icy
+            material were found on its fractured surface.
+        </p>
+        <div class="img">
+            <a href="imgs/ariel.jpg"><img alt="Ariel" src="imgs/ariel.jpg"/></a>
+            The icy moon Ariel by Voyager 2.
+            Credits: <a href="https://photojournal.jpl.nasa.gov/catalog/PIA00041">NASA/JPL-Caltech</a>
+        </div>
+    </div>
+    <div id="magnetic_field" class="info before">
+        <p>
+            Probably most anticipated was the question of if Uranus had a
+            magnetic field and what its characteristics were. They were
+            surprised to find a very odd magnetic field, its center being
+            offset from the center and tilted 60 degrees from the planet's
+            already sideways axis of rotation. This lead to its magnetotail
+            being twisted behind it.
+        </p>
+    </div>
+    <div id="neptune" class="info before">
+        <p>
+            After another four years of travel and twelve years after launch,
+            Voyager 2 reached Neptune on August 25, 1989. Again scientist were
+            in for quite the surprise. Even after the launch of the Hubble Space
+            Telescope, Voyager 2's pictures remain the best yet of the planet,
+            but Hubble did provide excellent follow up data from some of the
+            discoveries made.
+        </p>
+        <div class="img">
+            <a href="imgs/proteus.jpg"><img alt="Proteus (1989N1)" src="imgs/proteus.jpg"/></a>
+            Proteus (1989N1): a moon discovered by Voyager 2.
+            Credits: <a href="https://photojournal.jpl.nasa.gov/catalog/PIA00062">NASA/JPL-Caltech</a>
+        </div>
+    </div>
+    <div id="great_dark_spot" class="info before">
+        <p>
+            One of the largest discoveries of the planet made was the presence
+            of a large dark storm, similar to The Great Red Spot, and was
+            appropriately dubbed The Great Dark Spot. About the size of the
+            Earth, speeds were measured to be up to 1,200 miles per hour
+            (2,000 km/h), the fastest observed in our Solar System.
+            Hubble has since shown that this storm has disappeared.
+        </p>
+        <div class="img">
+            <a href="imgs/neptune.jpg"><img alt="Neptune" src="imgs/neptune.jpg"/></a>
+            Voyager 2's approach of Neptune.
+            Credits: <a href="https://photojournal.jpl.nasa.gov/catalog/PIA01492">NASA/JPL-Caltech</a>
+        </div>
+    </div>
+    <div id="triton" class="info before">
+        <p>
+            Of particular interest to scientists was Neptune's largest moon,
+            Triton. With no further targets after Neptune engineers optimized
+            Voyager 2's flyby trajectory to accommodate Triton's odd orbit with
+            its high inclination. Also odd was that they discovered that Triton
+            had a relatively high density. That with its retrograde orbit, it
+            is believed that it is a captured satellite, not originally from
+            the Neptune system.  Also they found geysers of nitrogen,
+            contributing to a thin atmosphere, with occasional clouds of
+            nitrogen ice.
+        </p>
+        <div class="img">
+            <a href="imgs/triton.jpg"><img alt="Triton" src="imgs/triton.jpg"/></a>
+            Voyager 2's image of Uranus' largest moon, Triton.
+            Credits: <a href="https://photojournal.jpl.nasa.gov/catalog/PIA02213">NASA/JPL-Caltech</a>
+        </div>
+    </div>
+    <div id="magnetic_and_rings" class="info before">
+        <p>
+            Especially after the surprise of Uranus' magnetic field, scientist
+            were anxious to learn about Neptune's magnetic field, and they
+            were not disappointed. While not as extreme as Uranus', they found
+            its magnetic field was off center and was tilted from its axis of
+            rotation.
+        </p>
+        <div class="img">
+            <a href="imgs/neptune-rings.jpg"><img alt="Neptune's Rings" src="imgs/neptune-rings.jpg"/></a>
+            Image of Neptune and its outermost rings by Voyager 2.
+            Credits: <a href="https://photojournal.jpl.nasa.gov/catalog/PIA01493">NASA/JPL-Caltech</a>
+        </div>
+    </div>
+    <div id="interstellar" class="info before">
+        <p>
+            To this day the Voyager spacecraft continue to sent back valuable
+            scientific data as they have continued out of the solar system.
+            As time has gone on, some of the Plutonium in the RTGs has decayed,
+            reducing their power output. To have enough energy to continue
+            operations, instruments and other supporting systems have
+            been shutdown.
+        </p>
+    </div>
+    <div id="family_portrait" class="info before">
+        <p>
+            Before shutting down the cameras on Voyager 1, scientists and
+            engineers decided to take one more set of images. The subject:
+            our Solar System. On February 14, 1990 A mosaic of 60 images was
+            taken capturing Venus, Earth, Jupiter, Saturn, Uranus, and Neptune.
+            Pluto was too small and dim, Mars was not visible because of
+            sunlight scattering inside the optics, and Mercury is too close
+            to the Sun.
+        </p>
+        <div class="img">
+            <a href="imgs/family-portriat.jpg"><img alt="Solar System Family Portrait" src="imgs/family-portriat.jpg"/></a>
+            Solar System Family Portrait by Voyager 1 in 1990.
+            Credits: <a href="https://photojournal.jpl.nasa.gov/catalog/PIA00451">NASA/JPL-Caltech</a>
+        </div>
+    </div>
+    <div id="pale_blue_dot" class="info before">
+        <p>
+            With the 60 wide angle frames, narrow angle images were taken of
+            the planets as well, including the famous Pale Blue Dot. These
+            pictures are the furthest pictures ever taken of our Sun and Planet.
+        </p>
+        <div class="img">
+            <a href="imgs/pale-blue-dot.jpg"><img alt="Earth: Pale Blue Dot" src="imgs/pale-blue-dot.jpg"/></a>
+            Earth, the "Pale Blue Dot", from the Solar System Family Portrait.
+            Credits: <a href="https://photojournal.jpl.nasa.gov/catalog/PIA00452">NASA/JPL-Caltech</a>
+        </div>
+    </div>
+    <div id="heliopause" class="info before">
+        <p>
+            The next milestone for the Voyager spacecrafts was to pass the
+            termination shock, or where because of interaction with the
+            interstellar medium, the speed of the solar wind slows down to
+            subsonic speeds relative to the sun. After about nine more years of
+            travel, both probes eventually crossed the heliopause and entered
+            the interstellar medium, and exiting the Sun's protective
+            magnetosphere. The probes still continue to send data from the
+            cosmic ray system, low-energy charged particle instrument, plasma
+            sensors, magnetometers, and radio astronomy antennas.
+        </p>
+    </div>
+    <div id="future" class="info before">
+        <p>
+            Engineers hope to continue the mission for as long as the spacecraft
+            continue to send data. Current plans power management strategies
+            will keep the probes operational for a few more years. As they
+            continue on, silent, they will pass by other stars in the galaxy,
+            and possibly be discovered by intelligent life, on which they will
+            find a golden record, containing a message in a bottle.
+            A message from the human race saying "Hi, this is who we are."
+        </p>
+        <div class="img">
+            <a href="imgs/golden-record.jpg"><img alt="The Golden Record Cover" src="imgs/golden-record.jpg"/></a>
+            The Golden Record Cover installed on one of the Voyager probes.
+            Credits: <a href="https://nssdc.gsfc.nasa.gov/image/spacecraft/voyager_disc.jpgw">NASA/JPL-Caltech</a>
+        </div>
+    </div>
+</body>
+</html>
