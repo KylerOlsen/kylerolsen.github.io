@@ -15,7 +15,7 @@ function main() {
     document.querySelector("#dark").addEventListener("click", dark_mode);
 
     const savedMode = localStorage.getItem("purple_cello_trichrome_color_mode");
-    const isDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const isDarkMode = false; //window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
     if (savedMode) {
         document.querySelector("body").setAttribute("mode", savedMode);
     } else if (isDarkMode) {
@@ -24,3 +24,4 @@ function main() {
 }
 
 document.addEventListener("DOMContentLoaded", main);
+
