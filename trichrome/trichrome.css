@@ -1,0 +1,139 @@
+/*
+    Kyler Olsen
+    Feb 2026
+*/
+
+body {
+    font-size: 18px;
+}
+
+main {
+    padding-left: 20vw;
+    padding-right: 20vw;
+}
+
+h1, h2, h3, h4 {
+    font-family:
+        'Lucida Sans',
+        'Lucida Sans Regular',
+        'Lucida Grande',
+        'Lucida Sans Unicode',
+        Geneva,
+        Verdana,
+        sans-serif;
+    /* margin: 16px 64px; */
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+
+.title {
+    text-align: center;
+}
+
+.title > h2 {
+    font-size: 32px;
+    margin-bottom: -0.5rem;
+}
+
+.title > h1 {
+    font-size: 42px;
+    margin-top: 0;
+}
+
+.pic {
+    /* display: flex;
+    flex-direction: column; */
+    /* display: inline-block; */
+    padding: 1rem;
+    border: 2px solid black;
+    width: fit-content;
+    margin: auto;
+    max-width: 60vw;
+    /* max-height: 20rem; */
+}
+
+.pic > img {
+    max-width: 50rem;
+    display: block;
+    margin: auto;
+    margin-bottom: 0;
+}
+
+.gallery {
+    display: flex;
+    flex-direction: row;
+}
+
+.gallery.p2 > .pic > img {
+    width: 25vw;
+}
+
+.gallery.p3.Prokudin-Gorsky > .pic {
+    width: 17vw;
+}
+
+.gallery.p3 > .pic > img {
+    width: 16vw;
+}
+
+a {
+    color: blue;
+    text-decoration: underline;
+}
+
+footer {
+    text-align: center;
+    padding: 8px;
+    padding-left: 20vw;
+    padding-right: 20vw;
+}
+
+@media screen and (max-width: 768px) {
+    main {
+        padding-left: 5vw;
+        padding-right: 5vw;
+    }
+
+    footer {
+        padding-left: 5vw;
+        padding-right: 5vw;
+    }
+
+    .pic {
+        max-width: 85vw;
+    }
+
+    .pic > img {
+        max-width: 80vw;
+    }
+
+    .gallery {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .gallery.p2 > .pic > img {
+        width: unset;
+    }
+
+    .gallery.p3.Prokudin-Gorsky > .pic {
+        width: unset;
+    }
+
+    .gallery.p3 > .pic > img {
+        width: unset;
+    }
+}
+
+body[mode="dark"] {
+    background-color: #121212;
+    color: #dedede;
+}
+
+body[mode="dark"] a {
+    color: #3399ff;
+}
+
+body[mode="dark"] .pic {
+    border: 2px solid #606060;
+}
